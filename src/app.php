@@ -82,7 +82,7 @@ $app->match('/add', function (Request $request) use ($app) {
             $alert = array('type' => 'success', 'message' => 'Yay! You uploaded a new photo.');
         } catch (Exception $e) {
             // Display an error message
-            $alert = array('type' => 'error', 'message' => 'Sorry, there was a problem uploading your photo.');
+            $alert = array('type' => 'error', 'message' => 'Sorry, there was a problem uploading your photo.' . $e->getMessage() . ' ' . $e->getTrace());
         }
     }
 
